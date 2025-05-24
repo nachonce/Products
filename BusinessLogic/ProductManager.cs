@@ -23,7 +23,7 @@ namespace BusinessLogic
 
             if (producto.Precio <= 0)
             {
-                throw new Exception("El precio debe ser mayor a 0");
+                throw new Exception("Los precios deben ser mayor a 0");
             }
 
 
