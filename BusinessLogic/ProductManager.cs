@@ -18,7 +18,7 @@ namespace BusinessLogic
        }
 
             if (producto.Stock < -1) {
-                throw new Exception("El stock no puede ser negativo");
+                throw new Exception("El stock no puede ser negativos");
             }
 
             if (producto.Precio <= 0)
