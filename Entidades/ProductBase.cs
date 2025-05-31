@@ -9,6 +9,6 @@ namespace Entidades
     public  class ProductBase
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public String Name { get; set; }
     }
 }

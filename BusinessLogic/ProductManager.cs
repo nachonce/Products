@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+
     public  class ProductManager
     {
-        
+        private FileManager fm = new FileManager();
         public void AddProduct(Product producto) {
             if (string.IsNullOrEmpty(producto.Name)) {
                 throw new Exception("El nombre esta vacio");
@@ -21,13 +22,13 @@ namespace BusinessLogic
                 throw new Exception("El stock no puede ser negativos");
             }
 
-            if (producto.Precio <= 0)
+            if (producto.Precio <= 0 ) 
             {
                 throw new Exception("Los precios deben ser mayor a 0");
             }
 
 
-            var fm = new FileManager();
+            
             fm.SaveProducts(producto);
 
            
@@ -40,11 +41,8 @@ namespace BusinessLogic
 
         }
 
-        public List<Product> GetProducts() { 
-        var list = new List<Product>();
-
-            
-            return list;
+        public List<Product> GetProducts() {
+            return fm.ReadProducts();
         }
     }
 }

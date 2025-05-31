@@ -3,17 +3,21 @@ using Entidades;
 
 public class Program {
     public static void Main(string[] args) {
-        Console.WriteLine("Bienvenidos al gestor de productos Dummy");
-        Console.WriteLine("Digite la opcion deseada");
-        Console.WriteLine("1.Agregar Producto");
-        Console.WriteLine("2.Consultar listado de productos");
-        Console.WriteLine("3.Salir");
+        
         var gestor = new ProductManager();
-        var option = Int32.Parse(Console.ReadLine());
+       
         bool salir = false;
 
         while (!salir)
         {
+
+
+            Console.WriteLine("Bienvenidos al gestor de productos Dummy");
+            Console.WriteLine("Digite la opcion deseada");
+            Console.WriteLine("1.Agregar Producto");
+            Console.WriteLine("2.Consultar listado de productos");
+            Console.WriteLine("3.Salir");
+            var option = Int32.Parse(Console.ReadLine());
             switch (option)
             {
                 case 1:
@@ -32,10 +36,11 @@ public class Program {
 
                     var producto = new Product
                     {
+                        Id = Id,
                         Name = Name,
                         Precio = Precio,
                         Stock = Stock,
-                        Id = Id
+                        
                     };
                     try
                     {
@@ -53,11 +58,7 @@ public class Program {
                     Console.WriteLine("Listado de productos existentes");
                     var lista = gestor.GetProducts();
 
-                    Console.WriteLine("Lista de productos");
-                    foreach (var p in lista)
-                    {
-                        Console.WriteLine($"{p.Name}");
-                    }
+         
 
 
 
